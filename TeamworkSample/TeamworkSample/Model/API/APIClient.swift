@@ -18,6 +18,7 @@ class APIClient {
     fileprivate static func request(endpoint: Endpoint,
                                     success: @escaping ([String : Any])->(),
                                     fail: @escaping (ApiError)->()) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         let _ = APIClient.manager.request(endpoint.path,
                                           method: endpoint.method,
                                           parameters: endpoint.parameters,
@@ -26,6 +27,7 @@ class APIClient {
             .authenticate(user: APISettings.username,
                           password: APISettings.password)
             .responseJSON { response in
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 switch response.result {
                 case .success(let json):
                     debugPrint(json)

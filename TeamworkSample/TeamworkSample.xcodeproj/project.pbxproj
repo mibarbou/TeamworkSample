@@ -32,10 +32,9 @@
 		AD9883E62010E587001408B9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9883E52010E587001408B9 /* Category.swift */; };
 		AD9883E82010E598001408B9 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9883E72010E598001408B9 /* Company.swift */; };
 		AD9883EB2010E907001408B9 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9883EA2010E907001408B9 /* Mapper.swift */; };
-		AD9883ED2010E965001408B9 /* ProjectsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9883EC2010E965001408B9 /* ProjectsMapper.swift */; };
-		AD9883EF2010E980001408B9 /* ProjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9883EE2010E980001408B9 /* ProjectMapper.swift */; };
-		AD9883F12010EAEA001408B9 /* CategoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9883F02010EAEA001408B9 /* CategoryMapper.swift */; };
-		AD9883F32010EAFC001408B9 /* CompanyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9883F22010EAFC001408B9 /* CompanyMapper.swift */; };
+		AD9883EF2010E980001408B9 /* ProjectEntryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9883EE2010E980001408B9 /* ProjectEntryMapper.swift */; };
+		AD9883F12010EAEA001408B9 /* CategoryEntryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9883F02010EAEA001408B9 /* CategoryEntryMapper.swift */; };
+		AD9883F32010EAFC001408B9 /* CompanyEntryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9883F22010EAFC001408B9 /* CompanyEntryMapper.swift */; };
 		ADC25F152011D66D00B8CC73 /* CategoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC25F142011D66D00B8CC73 /* CategoryEntry.swift */; };
 		ADC25F172011D89400B8CC73 /* CompanyEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC25F162011D89400B8CC73 /* CompanyEntry.swift */; };
 		ADC25F192011D9A700B8CC73 /* ProjectEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC25F182011D9A700B8CC73 /* ProjectEntry.swift */; };
@@ -85,10 +84,9 @@
 		AD9883E52010E587001408B9 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		AD9883E72010E598001408B9 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		AD9883EA2010E907001408B9 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
-		AD9883EC2010E965001408B9 /* ProjectsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsMapper.swift; sourceTree = "<group>"; };
-		AD9883EE2010E980001408B9 /* ProjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMapper.swift; sourceTree = "<group>"; };
-		AD9883F02010EAEA001408B9 /* CategoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMapper.swift; sourceTree = "<group>"; };
-		AD9883F22010EAFC001408B9 /* CompanyMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyMapper.swift; sourceTree = "<group>"; };
+		AD9883EE2010E980001408B9 /* ProjectEntryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEntryMapper.swift; sourceTree = "<group>"; };
+		AD9883F02010EAEA001408B9 /* CategoryEntryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEntryMapper.swift; sourceTree = "<group>"; };
+		AD9883F22010EAFC001408B9 /* CompanyEntryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyEntryMapper.swift; sourceTree = "<group>"; };
 		ADC25F142011D66D00B8CC73 /* CategoryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEntry.swift; sourceTree = "<group>"; };
 		ADC25F162011D89400B8CC73 /* CompanyEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyEntry.swift; sourceTree = "<group>"; };
 		ADC25F182011D9A700B8CC73 /* ProjectEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEntry.swift; sourceTree = "<group>"; };
@@ -249,10 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				AD9883EA2010E907001408B9 /* Mapper.swift */,
-				AD9883EC2010E965001408B9 /* ProjectsMapper.swift */,
-				AD9883EE2010E980001408B9 /* ProjectMapper.swift */,
-				AD9883F02010EAEA001408B9 /* CategoryMapper.swift */,
-				AD9883F22010EAFC001408B9 /* CompanyMapper.swift */,
+				D0785875201283A30073E0E6 /* Entries */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -284,6 +279,16 @@
 				410834D009342511ABCA9325 /* Pods_TeamworkSampleTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0785875201283A30073E0E6 /* Entries */ = {
+			isa = PBXGroup;
+			children = (
+				AD9883EE2010E980001408B9 /* ProjectEntryMapper.swift */,
+				AD9883F02010EAEA001408B9 /* CategoryEntryMapper.swift */,
+				AD9883F22010EAFC001408B9 /* CompanyEntryMapper.swift */,
+			);
+			path = Entries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,13 +517,12 @@
 				AD1A8AB02010B25700C56F65 /* ProjectsResponse.swift in Sources */,
 				AD9883E42010E501001408B9 /* Project.swift in Sources */,
 				ADC25F192011D9A700B8CC73 /* ProjectEntry.swift in Sources */,
-				AD9883ED2010E965001408B9 /* ProjectsMapper.swift in Sources */,
 				AD9883D92010B4C8001408B9 /* ProjectResponse.swift in Sources */,
 				ADC25F1B2011E13C00B8CC73 /* ProjectContainer.swift in Sources */,
-				AD9883F32010EAFC001408B9 /* CompanyMapper.swift in Sources */,
+				AD9883F32010EAFC001408B9 /* CompanyEntryMapper.swift in Sources */,
 				AD1A8A9920107E4E00C56F65 /* ProjectsTableViewController.swift in Sources */,
 				AD9883DB2010B73F001408B9 /* ProjectStatus.swift in Sources */,
-				AD9883F12010EAEA001408B9 /* CategoryMapper.swift in Sources */,
+				AD9883F12010EAEA001408B9 /* CategoryEntryMapper.swift in Sources */,
 				AD9883DF2010BFC3001408B9 /* CategoryResponse.swift in Sources */,
 				AD9883EB2010E907001408B9 /* Mapper.swift in Sources */,
 				ADC25F152011D66D00B8CC73 /* CategoryEntry.swift in Sources */,
@@ -528,7 +532,7 @@
 				AD1A8AAE2010A8FB00C56F65 /* ApiResponse.swift in Sources */,
 				AD1A8AA72010963D00C56F65 /* Endpoint.swift in Sources */,
 				AD1A8AA92010964C00C56F65 /* ApiError.swift in Sources */,
-				AD9883EF2010E980001408B9 /* ProjectMapper.swift in Sources */,
+				AD9883EF2010E980001408B9 /* ProjectEntryMapper.swift in Sources */,
 				AD9883E82010E598001408B9 /* Company.swift in Sources */,
 				ADC25F172011D89400B8CC73 /* CompanyEntry.swift in Sources */,
 			);

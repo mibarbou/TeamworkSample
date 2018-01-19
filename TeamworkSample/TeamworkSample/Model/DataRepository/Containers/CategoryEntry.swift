@@ -13,11 +13,4 @@ class CategoryEntry: Object {
     @objc dynamic var id: String = ""
     @objc dynamic var name: String = ""
     @objc dynamic var color: String = ""
-    
-    convenience init(category: Category) {
-        self.init()
-        id = category.id
-        name = category.name
-        color = category.color
-    }
 }

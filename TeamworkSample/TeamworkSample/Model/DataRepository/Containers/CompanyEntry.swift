@@ -12,12 +12,5 @@ import RealmSwift
 class CompanyEntry: Object {
     @objc dynamic var id: String = ""
     @objc dynamic var name: String = ""
-    @objc dynamic var isOwner: Bool = false
-    
-    convenience init(company: Company) {
-        self.init()
-        id = company.id
-        name = company.name
-        isOwner = company.isOwner
-    }
+    @objc dynamic var isOwner: String = ""
 }

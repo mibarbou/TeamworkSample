@@ -10,31 +10,39 @@ import Foundation
 import RealmSwift
 
 protocol Containable {
-    func allProjects() -> Results<ProjectEntry>
     func deleteAll()
     func projectsCount() -> Int
     func project(indexPath: IndexPath) -> ProjectEntry
     func updateData(reload: @escaping ()->())
+    func fetchProjects() -> Results<ProjectEntry>
 }
 
 class DataRepository: Containable {
-    fileprivate lazy var container: Realm = { return try! Realm() }()
+    fileprivate var container: Realm = { return try! Realm() }()
     
-    fileprivate lazy var projects: Results<ProjectEntry> = {
-        let result = allProjects()
-        result.observe({ (changes) in
-            
-        })
-        return allProjects()
-    }()
+    fileprivate var token: NotificationToken? = nil
     
+    fileprivate var projects: Results<ProjectEntry> {
+        return container.objects(ProjectEntry.self)
+    }
     
-    func allProjects() -> Results<ProjectEntry> {
+    deinit {
+        token?.invalidate()
+    }
+    
+    func fetchProjects() -> Results<ProjectEntry> {
         APIClient.projects(success: { response in
-            let projects = ProjectsMapper.map(input: response)
-            self.save(projects: projects)
+            if let projects = response.projects {
+                self.deleteAll()
+                let entries = projects.map{ ProjectEntryMapper.map(input: $0) }
+                self.save(projects: entries)
+            }
         }) { (error) in
         }
+        return getSavedProjects()
+    }
+    
+    func getSavedProjects() -> Results<ProjectEntry> {
         return container.objects(ProjectEntry.self)
     }
     
@@ -54,17 +62,24 @@ class DataRepository: Containable {
     }
     
     func updateData(reload: @escaping ()->()) {
-        let _ = allProjects()._observe { (_) in
-            reload()
-        }
+        token = projects.observe({ (changes) in
+            switch changes {
+            case .initial:
+                // Results are now populated and can be accessed without blocking the UI
+                reload()
+            case .update(_, let deletions, let insertions, let modifications):
+                // Query results have changed, so apply them to the UITableView
+                reload()
+            case .error(let error):
+                // An error occurred while opening the Realm file on the background worker thread
+                fatalError("\(error)")
+            }
+        })
     }
     
-    
-    fileprivate func save(projects: [Project]) {
-        let projectsEntries = projects.map{ ProjectEntry(project: $0) }
+    fileprivate func save(projects: [ProjectEntry]) {
         try! container.write {
-            container.deleteAll()
-            container.add(projectsEntries)
+            container.add(projects)
         }
     }
     

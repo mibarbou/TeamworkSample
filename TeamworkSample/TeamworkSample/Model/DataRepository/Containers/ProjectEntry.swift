@@ -15,15 +15,5 @@ class ProjectEntry: Object {
     @objc dynamic var desc: String = ""
     @objc dynamic var category: CategoryEntry?
     @objc dynamic var company: CompanyEntry?
-//    @objc dynamic var logo: URL?
-    
-    convenience init(project: Project) {
-        self.init()
-        id = project.id
-        name = project.name
-        desc = project.description
-        category = CategoryEntry(category: project.category)
-        company = CompanyEntry(company: project.company)
-//        logo = project.logo
-    }
+    @objc dynamic var logo: String = ""
 }
