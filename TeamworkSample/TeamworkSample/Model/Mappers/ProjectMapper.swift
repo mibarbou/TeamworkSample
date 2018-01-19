@@ -12,12 +12,12 @@ struct ProjectMapper: Mapper {
     typealias IN = ProjectResponse
     typealias OUT = Project
     
-    func map(input: ProjectResponse) -> Project {
+    static func map(input: ProjectResponse) -> Project {
         return Project(id: input.id ?? "",
                        name: input.name ?? "",
                        description: input.description ?? "",
-                       category: CategoryMapper().map(input: input.category),
-                       company: CompanyMapper().map(input: input.company),
+                       category: CategoryMapper.map(input: input.category),
+                       company: CompanyMapper.map(input: input.company),
                        logo: URL(string: input.logo ?? ""))
     }
 }

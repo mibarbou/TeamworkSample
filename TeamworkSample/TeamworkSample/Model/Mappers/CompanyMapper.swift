@@ -12,7 +12,7 @@ struct CompanyMapper: Mapper {
     typealias IN = CompanyResponse?
     typealias OUT = Company
     
-    func map(input: CompanyResponse?) -> Company {
+    static func map(input: CompanyResponse?) -> Company {
         let isOwner: Bool = (input?.isOwner ?? "") == "1" ? true: false
         return Company(id: input?.id ?? "",
                        name: input?.name ?? "",

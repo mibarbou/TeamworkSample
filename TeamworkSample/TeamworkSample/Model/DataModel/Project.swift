@@ -15,5 +15,4 @@ struct Project {
     let category:           Category
     let company:            Company
     let logo:               URL?
-    
 }

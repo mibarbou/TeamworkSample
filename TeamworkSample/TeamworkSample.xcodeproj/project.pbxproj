@@ -36,6 +36,11 @@
 		AD9883EF2010E980001408B9 /* ProjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9883EE2010E980001408B9 /* ProjectMapper.swift */; };
 		AD9883F12010EAEA001408B9 /* CategoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9883F02010EAEA001408B9 /* CategoryMapper.swift */; };
 		AD9883F32010EAFC001408B9 /* CompanyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9883F22010EAFC001408B9 /* CompanyMapper.swift */; };
+		ADC25F152011D66D00B8CC73 /* CategoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC25F142011D66D00B8CC73 /* CategoryEntry.swift */; };
+		ADC25F172011D89400B8CC73 /* CompanyEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC25F162011D89400B8CC73 /* CompanyEntry.swift */; };
+		ADC25F192011D9A700B8CC73 /* ProjectEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC25F182011D9A700B8CC73 /* ProjectEntry.swift */; };
+		ADC25F1B2011E13C00B8CC73 /* ProjectContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC25F1A2011E13C00B8CC73 /* ProjectContainer.swift */; };
+		ADC25F1D2011E34100B8CC73 /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC25F1C2011E34100B8CC73 /* DataRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +89,11 @@
 		AD9883EE2010E980001408B9 /* ProjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMapper.swift; sourceTree = "<group>"; };
 		AD9883F02010EAEA001408B9 /* CategoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMapper.swift; sourceTree = "<group>"; };
 		AD9883F22010EAFC001408B9 /* CompanyMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyMapper.swift; sourceTree = "<group>"; };
+		ADC25F142011D66D00B8CC73 /* CategoryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEntry.swift; sourceTree = "<group>"; };
+		ADC25F162011D89400B8CC73 /* CompanyEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyEntry.swift; sourceTree = "<group>"; };
+		ADC25F182011D9A700B8CC73 /* ProjectEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEntry.swift; sourceTree = "<group>"; };
+		ADC25F1A2011E13C00B8CC73 /* ProjectContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectContainer.swift; sourceTree = "<group>"; };
+		ADC25F1C2011E34100B8CC73 /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
 		B9F008DE73392E1E40258EF1 /* Pods_TeamworkSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamworkSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E002DFFAD67F106BB22BAE75 /* Pods-TeamworkSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamworkSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamworkSample/Pods-TeamworkSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +177,7 @@
 		AD1A8A9620107DFE00C56F65 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ADC25F122011D39600B8CC73 /* DataRepository */,
 				AD9883E92010E8F4001408B9 /* Mappers */,
 				AD9883E12010E4B9001408B9 /* DataModel */,
 				AD1A8AA3201095E800C56F65 /* API */,
@@ -244,6 +255,26 @@
 				AD9883F22010EAFC001408B9 /* CompanyMapper.swift */,
 			);
 			path = Mappers;
+			sourceTree = "<group>";
+		};
+		ADC25F122011D39600B8CC73 /* DataRepository */ = {
+			isa = PBXGroup;
+			children = (
+				ADC25F132011D3D300B8CC73 /* Containers */,
+				ADC25F1C2011E34100B8CC73 /* DataRepository.swift */,
+			);
+			path = DataRepository;
+			sourceTree = "<group>";
+		};
+		ADC25F132011D3D300B8CC73 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				ADC25F142011D66D00B8CC73 /* CategoryEntry.swift */,
+				ADC25F162011D89400B8CC73 /* CompanyEntry.swift */,
+				ADC25F182011D9A700B8CC73 /* ProjectEntry.swift */,
+				ADC25F1A2011E13C00B8CC73 /* ProjectContainer.swift */,
+			);
+			path = Containers;
 			sourceTree = "<group>";
 		};
 		C4CB75E4C2BFB6FDD32789FB /* Frameworks */ = {
@@ -389,11 +420,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TeamworkSample/Pods-TeamworkSample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -476,21 +511,26 @@
 				AD1A8A9D20108C1900C56F65 /* ProjectCell.swift in Sources */,
 				AD1A8AB02010B25700C56F65 /* ProjectsResponse.swift in Sources */,
 				AD9883E42010E501001408B9 /* Project.swift in Sources */,
+				ADC25F192011D9A700B8CC73 /* ProjectEntry.swift in Sources */,
 				AD9883ED2010E965001408B9 /* ProjectsMapper.swift in Sources */,
 				AD9883D92010B4C8001408B9 /* ProjectResponse.swift in Sources */,
+				ADC25F1B2011E13C00B8CC73 /* ProjectContainer.swift in Sources */,
 				AD9883F32010EAFC001408B9 /* CompanyMapper.swift in Sources */,
 				AD1A8A9920107E4E00C56F65 /* ProjectsTableViewController.swift in Sources */,
 				AD9883DB2010B73F001408B9 /* ProjectStatus.swift in Sources */,
 				AD9883F12010EAEA001408B9 /* CategoryMapper.swift in Sources */,
 				AD9883DF2010BFC3001408B9 /* CategoryResponse.swift in Sources */,
 				AD9883EB2010E907001408B9 /* Mapper.swift in Sources */,
+				ADC25F152011D66D00B8CC73 /* CategoryEntry.swift in Sources */,
 				AD1A8AA52010962900C56F65 /* APIClient.swift in Sources */,
 				AD9883E62010E587001408B9 /* Category.swift in Sources */,
+				ADC25F1D2011E34100B8CC73 /* DataRepository.swift in Sources */,
 				AD1A8AAE2010A8FB00C56F65 /* ApiResponse.swift in Sources */,
 				AD1A8AA72010963D00C56F65 /* Endpoint.swift in Sources */,
 				AD1A8AA92010964C00C56F65 /* ApiError.swift in Sources */,
 				AD9883EF2010E980001408B9 /* ProjectMapper.swift in Sources */,
 				AD9883E82010E598001408B9 /* Company.swift in Sources */,
+				ADC25F172011D89400B8CC73 /* CompanyEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

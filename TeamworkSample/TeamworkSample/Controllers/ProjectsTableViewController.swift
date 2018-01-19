@@ -7,18 +7,29 @@
 //
 
 import UIKit
-
+import RealmSwift
 class ProjectsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        APIClient.projects(success: { projects in
-            print(projects)
-        }) { error in
-            
+//        APIClient.projects(success: { projects in
+//            print(projects)
+//        }) { error in
+//
+//        }
+//        let results = DataRepository().allProjects()
+//        print(results.count)
+//
+//        DataRepository().deleteAll()
+//        print(results)
+        
+        DataRepository().updateData {
+            self.tableView.reloadData()
         }
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -38,12 +49,13 @@ class ProjectsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return DataRepository().projectsCount()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProjectCell.identifier, for: indexPath) as! ProjectCell
-        cell.nameLabel.text = "Project: \(indexPath.row + 1)"
+        let result = DataRepository().project(indexPath: indexPath)
+        cell.nameLabel.text = "Project: \(result.name)"
         return cell
     }
 }

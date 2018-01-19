@@ -12,7 +12,7 @@ struct CategoryMapper: Mapper {
     typealias IN = CategoryResponse?
     typealias OUT = Category
     
-    func map(input: CategoryResponse?) -> Category {
+    static func map(input: CategoryResponse?) -> Category {
         return Category(id: input?.id ?? "",
                         name: input?.name ?? "",
                         color: input?.color ?? "")
