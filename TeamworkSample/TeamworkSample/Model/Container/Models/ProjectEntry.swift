@@ -16,4 +16,8 @@ class ProjectEntry: Object {
     @objc dynamic var category: CategoryEntry?
     @objc dynamic var company: CompanyEntry?
     @objc dynamic var logo: String = ""
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

@@ -13,4 +13,8 @@ class CompanyEntry: Object {
     @objc dynamic var id: String = ""
     @objc dynamic var name: String = ""
     @objc dynamic var isOwner: String = ""
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

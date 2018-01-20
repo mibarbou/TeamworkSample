@@ -23,7 +23,5 @@ struct CompanyEntryMapper: Mapper {
         entry.name = name
         entry.isOwner = isOwner
         return entry
-    }
-    
-    //let isOwner: Bool = (input?.isOwner ?? "") == "1" ? true: false
+    }    
 }

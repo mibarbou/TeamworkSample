@@ -9,6 +9,7 @@
 import Gloss
 
 struct ProjectResponse: JSONDecodable {
+    let id:                             String
     let company:                        CompanyResponse?
     let starred:                        Bool?
     let name:                           String?
@@ -23,12 +24,15 @@ struct ProjectResponse: JSONDecodable {
     let logo:                           String?
     let startDate:                      String?
     let notifyEveryone:                 Bool?
-    let id:                             String?
     let lastChangedOn:                  String?
     let endDate:                        String?
     let harvestTimersEnabled:           Bool?
     
     init?(json: JSON) {
+        guard let id: String = "id" <~~ json else {
+            return nil
+        }
+        self.id = id
         self.company = "company" <~~ json
         self.starred = "starred" <~~ json
         self.name = "name" <~~ json
@@ -43,7 +47,6 @@ struct ProjectResponse: JSONDecodable {
         self.logo = "logo" <~~ json
         self.startDate = "startDate" <~~ json
         self.notifyEveryone = "notifyeveryone" <~~ json
-        self.id = "id" <~~ json
         self.lastChangedOn = "last-changed-on" <~~ json
         self.endDate = "endDate" <~~ json
         self.harvestTimersEnabled = "harvest-timers-enabled" <~~ json

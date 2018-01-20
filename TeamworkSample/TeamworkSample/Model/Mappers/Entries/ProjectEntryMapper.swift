@@ -14,11 +14,10 @@ struct ProjectEntryMapper: Mapper {
     
     static func map(input: ProjectResponse) -> ProjectEntry {
         let entry = ProjectEntry()
-        if let id = input.id,
-            let name = input.name,
+        entry.id = input.id
+        if let name = input.name,
             let description = input.description,
             let logo = input.logo {
-                entry.id = id
                 entry.name = name
                 entry.desc = description
                 entry.logo = logo

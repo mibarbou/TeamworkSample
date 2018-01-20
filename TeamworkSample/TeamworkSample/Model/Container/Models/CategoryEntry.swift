@@ -13,4 +13,8 @@ class CategoryEntry: Object {
     @objc dynamic var id: String = ""
     @objc dynamic var name: String = ""
     @objc dynamic var color: String = ""
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }
