@@ -24,4 +24,8 @@ class ProjectCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configureCell(project: ProjectViewData) {
+        nameLabel.text = project.name
+    }
+    
 }

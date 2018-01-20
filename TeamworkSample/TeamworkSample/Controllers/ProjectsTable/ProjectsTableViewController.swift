@@ -7,12 +7,13 @@
 //
 
 import UIKit
-import RealmSwift
+
 class ProjectsTableViewController: UITableViewController {
     
     private let presenter = ProjectsPresenter(projectService: ProjectService())
     private var projectsToDisplay = [ProjectViewData]()
-    
+    var didSelectProject: (ProjectViewData) -> Void = { _ in }
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -49,8 +50,13 @@ class ProjectsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProjectCell.identifier, for: indexPath) as! ProjectCell
         let project = projectsToDisplay[indexPath.row]
-        cell.nameLabel.text = "Project: \(project.name)"
+        cell.configureCell(project: project)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let project = projectsToDisplay[indexPath.row]
+        didSelectProject(project)
     }
 }
 

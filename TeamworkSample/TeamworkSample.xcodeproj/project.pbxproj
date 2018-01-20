@@ -46,6 +46,13 @@
 		D0CB71452013389C007B4073 /* CompanyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB71442013389C007B4073 /* CompanyMapper.swift */; };
 		D0CB7147201338B8007B4073 /* CategoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB7146201338B8007B4073 /* CategoryMapper.swift */; };
 		D0CB714920134375007B4073 /* ProjectsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB714820134375007B4073 /* ProjectsPresenter.swift */; };
+		D0CB714C20136E73007B4073 /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB714A20136E73007B4073 /* ProjectDetailViewController.swift */; };
+		D0CB714D20136E73007B4073 /* ProjectDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CB714B20136E73007B4073 /* ProjectDetailViewController.xib */; };
+		D0CB715120138188007B4073 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB715020138188007B4073 /* Coordinator.swift */; };
+		D0CB7153201381CA007B4073 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB7152201381CA007B4073 /* AppCoordinator.swift */; };
+		D0CB715620138355007B4073 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB715520138355007B4073 /* Color.swift */; };
+		D0CB715920138438007B4073 /* ProjectsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB715820138438007B4073 /* ProjectsCoordinator.swift */; };
+		D0CB715C201386C3007B4073 /* ProjectDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB715B201386C3007B4073 /* ProjectDetailCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +112,13 @@
 		D0CB71442013389C007B4073 /* CompanyMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyMapper.swift; sourceTree = "<group>"; };
 		D0CB7146201338B8007B4073 /* CategoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMapper.swift; sourceTree = "<group>"; };
 		D0CB714820134375007B4073 /* ProjectsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsPresenter.swift; sourceTree = "<group>"; };
+		D0CB714A20136E73007B4073 /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
+		D0CB714B20136E73007B4073 /* ProjectDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectDetailViewController.xib; sourceTree = "<group>"; };
+		D0CB715020138188007B4073 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D0CB7152201381CA007B4073 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D0CB715520138355007B4073 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		D0CB715820138438007B4073 /* ProjectsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCoordinator.swift; sourceTree = "<group>"; };
+		D0CB715B201386C3007B4073 /* ProjectDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailCoordinator.swift; sourceTree = "<group>"; };
 		E002DFFAD67F106BB22BAE75 /* Pods-TeamworkSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamworkSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamworkSample/Pods-TeamworkSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,9 +179,11 @@
 			isa = PBXGroup;
 			children = (
 				AD1A8A7620107D3B00C56F65 /* AppDelegate.swift */,
+				D0CB7152201381CA007B4073 /* AppCoordinator.swift */,
 				AD1A8A9620107DFE00C56F65 /* Model */,
 				AD1A8A9A20108BE100C56F65 /* Views */,
 				AD1A8A9720107E1200C56F65 /* Controllers */,
+				D0CB71542013830B007B4073 /* Utils */,
 				AD1A8A7D20107D3B00C56F65 /* Assets.xcassets */,
 				AD1A8A7F20107D3B00C56F65 /* LaunchScreen.storyboard */,
 				AD1A8A8220107D3B00C56F65 /* Info.plist */,
@@ -187,11 +203,11 @@
 		AD1A8A9620107DFE00C56F65 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AD9883E12010E4B9001408B9 /* DataModel */,
+				D03D6F4D20132450006F4F41 /* ViewModels */,
 				D03D6F5620132B99006F4F41 /* Services */,
 				ADC25F132011D3D300B8CC73 /* Container */,
 				AD9883E92010E8F4001408B9 /* Mappers */,
-				D03D6F4D20132450006F4F41 /* ViewModels */,
-				AD9883E12010E4B9001408B9 /* DataModel */,
 				AD1A8AA3201095E800C56F65 /* API */,
 			);
 			path = Model;
@@ -200,8 +216,8 @@
 		AD1A8A9720107E1200C56F65 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AD1A8A9820107E4E00C56F65 /* ProjectsTableViewController.swift */,
-				D0CB714820134375007B4073 /* ProjectsPresenter.swift */,
+				D0CB7157201383F3007B4073 /* ProjectsTable */,
+				D0CB715A2013844F007B4073 /* ProjectDetail */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -341,6 +357,35 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D0CB71542013830B007B4073 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D0CB715020138188007B4073 /* Coordinator.swift */,
+				D0CB715520138355007B4073 /* Color.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D0CB7157201383F3007B4073 /* ProjectsTable */ = {
+			isa = PBXGroup;
+			children = (
+				AD1A8A9820107E4E00C56F65 /* ProjectsTableViewController.swift */,
+				D0CB714820134375007B4073 /* ProjectsPresenter.swift */,
+				D0CB715820138438007B4073 /* ProjectsCoordinator.swift */,
+			);
+			path = ProjectsTable;
+			sourceTree = "<group>";
+		};
+		D0CB715A2013844F007B4073 /* ProjectDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D0CB714A20136E73007B4073 /* ProjectDetailViewController.swift */,
+				D0CB715B201386C3007B4073 /* ProjectDetailCoordinator.swift */,
+				D0CB714B20136E73007B4073 /* ProjectDetailViewController.xib */,
+			);
+			path = ProjectDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -433,6 +478,7 @@
 				AD1A8A8120107D3B00C56F65 /* LaunchScreen.storyboard in Resources */,
 				AD1A8A7E20107D3B00C56F65 /* Assets.xcassets in Resources */,
 				AD1A8AA220108E0E00C56F65 /* README.md in Resources */,
+				D0CB714D20136E73007B4073 /* ProjectDetailViewController.xib in Resources */,
 				AD1A8AA020108DF200C56F65 /* Podfile in Resources */,
 				AD1A8A9E20108C1900C56F65 /* ProjectCell.xib in Resources */,
 			);
@@ -562,6 +608,7 @@
 			files = (
 				AD1A8AAB2010976000C56F65 /* APISettings.swift in Sources */,
 				AD1A8A7720107D3B00C56F65 /* AppDelegate.swift in Sources */,
+				D0CB7153201381CA007B4073 /* AppCoordinator.swift in Sources */,
 				AD9883DD2010BC87001408B9 /* CompanyResponse.swift in Sources */,
 				AD1A8A9D20108C1900C56F65 /* ProjectCell.swift in Sources */,
 				AD1A8AB02010B25700C56F65 /* ProjectsResponse.swift in Sources */,
@@ -569,19 +616,24 @@
 				D0CB7147201338B8007B4073 /* CategoryMapper.swift in Sources */,
 				ADC25F192011D9A700B8CC73 /* ProjectEntry.swift in Sources */,
 				AD9883D92010B4C8001408B9 /* ProjectResponse.swift in Sources */,
+				D0CB715C201386C3007B4073 /* ProjectDetailCoordinator.swift in Sources */,
 				AD9883F32010EAFC001408B9 /* CompanyEntryMapper.swift in Sources */,
 				AD1A8A9920107E4E00C56F65 /* ProjectsTableViewController.swift in Sources */,
 				AD9883DB2010B73F001408B9 /* ProjectStatus.swift in Sources */,
 				AD9883F12010EAEA001408B9 /* CategoryEntryMapper.swift in Sources */,
 				AD9883DF2010BFC3001408B9 /* CategoryResponse.swift in Sources */,
 				D03D6F5520132649006F4F41 /* ProjectViewDataMapper.swift in Sources */,
+				D0CB714C20136E73007B4073 /* ProjectDetailViewController.swift in Sources */,
 				D0CB71452013389C007B4073 /* CompanyMapper.swift in Sources */,
+				D0CB715120138188007B4073 /* Coordinator.swift in Sources */,
 				AD9883EB2010E907001408B9 /* Mapper.swift in Sources */,
 				D0CB7140201332D5007B4073 /* ProjectService.swift in Sources */,
 				ADC25F152011D66D00B8CC73 /* CategoryEntry.swift in Sources */,
 				D03D6F5A20132D94006F4F41 /* ProjectContainer.swift in Sources */,
+				D0CB715620138355007B4073 /* Color.swift in Sources */,
 				D0CB714920134375007B4073 /* ProjectsPresenter.swift in Sources */,
 				AD1A8AA52010962900C56F65 /* APIClient.swift in Sources */,
+				D0CB715920138438007B4073 /* ProjectsCoordinator.swift in Sources */,
 				D0CB714320133858007B4073 /* ProjectMapper.swift in Sources */,
 				AD9883E62010E587001408B9 /* Category.swift in Sources */,
 				AD1A8AAE2010A8FB00C56F65 /* ApiResponse.swift in Sources */,
