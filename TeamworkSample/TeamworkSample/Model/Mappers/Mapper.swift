@@ -11,5 +11,5 @@ import Foundation
 protocol Mapper {
     associatedtype IN
     associatedtype OUT
-    func map(input: IN) -> OUT
+    static func map(input: IN) -> OUT
 }

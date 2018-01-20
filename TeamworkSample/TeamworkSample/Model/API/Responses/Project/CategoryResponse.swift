@@ -9,12 +9,15 @@
 import Gloss
 
 struct CategoryResponse: JSONDecodable {
-    let id:     String?
+    let id:     String
     let name:   String?
     let color:  String?
     
     init?(json: JSON) {
-        self.id = "id" <~~ json
+        guard let id: String = "id" <~~ json else {
+            return nil
+        }
+        self.id = id
         self.name = "name" <~~ json
         self.color = "color" <~~ json
     }
