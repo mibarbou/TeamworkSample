@@ -45,6 +45,14 @@ class ProjectService {
         return projectContainer.companyNameAt(index: index)
     }
     
+    func projectActivity(id: String) -> [Activity] {
+        if isCacheData {
+            getServerProjectActivity(id: id)
+        }
+        let activityList = projectContainer.getProjectActivity(id: id)
+        return activityList.map{ ActivityMapper.map(input: $0) }
+    }
+    
     func reloadData(callback: @escaping ()->()) {
         projectContainer.subscribeToUpdatedData {
             callback()
@@ -57,6 +65,20 @@ class ProjectService {
                 self.isCacheData = false
                 let entries = projects.map{ ProjectEntryMapper.map(input: $0) }
                 self.projectContainer.save(projects: entries)
+            }
+        }) { (error) in
+            
+        }
+    }
+    
+    fileprivate func getServerProjectActivity(id: String) {
+        APIClient.latestActivities(projectId: id,
+                                   success: { response in
+            if let activity = response.activities {
+                self.isCacheData = false
+                self.projectContainer.deleteProjectActivity(id: id)
+                let entries = activity.map{ ActivityEntryMapper.map(input: $0) }
+                self.projectContainer.saveProjectActivity(id: id, activity: entries)
             }
         }) { (error) in
             

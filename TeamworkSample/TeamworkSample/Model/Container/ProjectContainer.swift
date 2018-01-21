@@ -47,7 +47,7 @@ final public class ProjectContainer {
     }
     
     func getCompanies() -> Results<CompanyEntry> {
-        return self.container.objects(CompanyEntry.self)
+        return self.container.objects(CompanyEntry.self).sorted(byKeyPath: "name")
     }
     
     func companiesCount() -> Int {
@@ -82,6 +82,31 @@ final public class ProjectContainer {
         }
     }
     
+    func saveProjectActivity(id: String, activity: [ActivityEntry]) {
+        if let project = container.object(ofType: ProjectEntry.self, forPrimaryKey: id) {
+            try! container.write {
+                project.activity.append(objectsIn: activity)
+                container.add(project, update: true)
+            }
+        }
+    }
+    
+    func deleteProjectActivity(id: String) {
+        if let project = container.object(ofType: ProjectEntry.self, forPrimaryKey: id) {
+            try! container.write {
+                container.delete(project.activity)
+            }
+        }
+    }
+    
+    func getProjectActivity(id: String) -> List<ActivityEntry>  {
+        guard let activity = container.object(ofType: ProjectEntry.self,
+                                              forPrimaryKey: id)?.activity else {
+            return List<ActivityEntry>()
+        }
+        return activity
+    }
+    
     func deleteAll() {
         try! container.write {
             container.deleteAll()
@@ -89,7 +114,7 @@ final public class ProjectContainer {
     }
     
     func subscribeToUpdatedData(callback: @escaping ()->()) {
-        self.notificationToken = container.observe({ (not, realm) in
+        self.notificationToken = container.observe({ (notif, realm) in
             callback()
         })
     }

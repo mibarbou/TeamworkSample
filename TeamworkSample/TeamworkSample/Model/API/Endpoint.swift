@@ -12,13 +12,14 @@ import Alamofire
 enum Endpoint {
     case projects(status: ProjectStatus)
     case project(id: String)
+    case latestActivity(projectId: String)
 }
 
 //MARK: - method
 extension Endpoint {
     var method: Alamofire.HTTPMethod {
         switch self {
-        case .projects, .project:
+        case .projects, .project, .latestActivity:
             return .get
         }
     }
@@ -32,6 +33,8 @@ extension Endpoint {
             return APISettings.baseURL + "/projects.json"
         case let .project(id: id):
             return APISettings.baseURL + "/projects/\(id).json"
+        case let .latestActivity(projectId: id):
+            return APISettings.baseURL + "/projects/\(id)/latestActivity.json"
         }
     }
 }
@@ -42,7 +45,7 @@ extension Endpoint {
         switch self {
         case let .projects(status: s):
             return ["status": s.rawValue]
-        case .project:
+        case .project, .latestActivity:
             return [:]
         }
     }

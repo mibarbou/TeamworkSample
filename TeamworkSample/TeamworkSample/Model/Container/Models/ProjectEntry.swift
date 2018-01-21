@@ -17,6 +17,7 @@ class ProjectEntry: Object {
     @objc dynamic var company: CompanyEntry?
     @objc dynamic var logo: String = ""
     @objc dynamic var status: String = ""
+    var activity = List<ActivityEntry>()
     
     override static func primaryKey() -> String? {
         return "id"

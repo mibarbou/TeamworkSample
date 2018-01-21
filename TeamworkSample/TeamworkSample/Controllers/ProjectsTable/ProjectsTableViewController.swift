@@ -69,8 +69,7 @@ class ProjectsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProjectCell.identifier, for: indexPath) as! ProjectCell
         let project = presenter.projectAt(indexPath: indexPath)
-        cell.nameLabel.text = project.name
-//        cell.configureCell(project: project)
+        cell.configureCell(project: project)
         return cell
     }
     

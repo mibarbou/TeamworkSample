@@ -63,7 +63,9 @@ extension APIClient {
                      success: { response in
                         if let projectsResponse = ProjectsResponse(json: response) {
                             success(projectsResponse)
+                            return
                         }
+                        fail(.parser)
         }) { error in
             fail(error)
         }
@@ -76,10 +78,28 @@ extension APIClient {
                      success: { response in
                         if let projectResponse = ProjectResponse(json: response) {
                             success(projectResponse)
+                            return
                         }
+                        fail(.parser)
         }) { error in
             fail(error)
         }
+    }
+    
+    public static func latestActivities(projectId: String,
+                                        success: @escaping (ActivityListResponse)->(),
+                                        fail: @escaping (ApiError)->()) {
+        self.request(endpoint: .latestActivity(projectId: projectId),
+                     success: { response in
+                        if let activityListResponse = ActivityListResponse(json: response) {
+                            success(activityListResponse)
+                            return
+                        }
+                        fail(.parser)
+        }) { error in
+            fail(error)
+        }
+    
     }
 }
 

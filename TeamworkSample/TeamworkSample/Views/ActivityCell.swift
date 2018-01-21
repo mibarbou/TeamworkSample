@@ -1,17 +1,17 @@
 //
-//  ProjectCell.swift
+//  ActivityCell.swift
 //  TeamworkSample
 //
-//  Created by Michel Barbou Salvador on 18/01/2018.
+//  Created by Michel Barbou Salvador on 21/01/2018.
 //  Copyright © 2018 Michel Barbou Salvador. All rights reserved.
 //
 
 import UIKit
 
-class ProjectCell: UITableViewCell {
-    static let identifier = "ProjectCell"
+class ActivityCell: UITableViewCell {
+    static let identifier = "ActivityCell"
 
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,11 +22,6 @@ class ProjectCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    func configureCell(project: Project) {
-        let viewModel = ProjectViewDataMapper.map(input: project)
-        nameLabel.text = viewModel.name
     }
     
 }

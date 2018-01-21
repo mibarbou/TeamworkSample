@@ -41,6 +41,15 @@
 		D03D6F5120132576006F4F41 /* ProjectViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D6F5020132576006F4F41 /* ProjectViewData.swift */; };
 		D03D6F5520132649006F4F41 /* ProjectViewDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D6F5420132649006F4F41 /* ProjectViewDataMapper.swift */; };
 		D03D6F5A20132D94006F4F41 /* ProjectContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D6F5920132D94006F4F41 /* ProjectContainer.swift */; };
+		D066BA0A2014C9EB00CC8E78 /* ActivityListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066BA092014C9EB00CC8E78 /* ActivityListResponse.swift */; };
+		D066BA0D2014CA3900CC8E78 /* ActivityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066BA0C2014CA3900CC8E78 /* ActivityResponse.swift */; };
+		D066BA0F2014E2B900CC8E78 /* ActivityEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066BA0E2014E2B900CC8E78 /* ActivityEntry.swift */; };
+		D066BA112014EBEA00CC8E78 /* ActivityEntryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066BA102014EBEA00CC8E78 /* ActivityEntryMapper.swift */; };
+		D066BA132014F51500CC8E78 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066BA122014F51500CC8E78 /* Activity.swift */; };
+		D066BA152014F6BA00CC8E78 /* ActivityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066BA142014F6BA00CC8E78 /* ActivityMapper.swift */; };
+		D066BA172014F9FA00CC8E78 /* ProjectDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066BA162014F9FA00CC8E78 /* ProjectDetailPresenter.swift */; };
+		D066BA1A20150A7C00CC8E78 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066BA1820150A7C00CC8E78 /* ActivityCell.swift */; };
+		D066BA1B20150A7C00CC8E78 /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D066BA1920150A7C00CC8E78 /* ActivityCell.xib */; };
 		D0CB7140201332D5007B4073 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB713F201332D5007B4073 /* ProjectService.swift */; };
 		D0CB714320133858007B4073 /* ProjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB714220133858007B4073 /* ProjectMapper.swift */; };
 		D0CB71452013389C007B4073 /* CompanyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB71442013389C007B4073 /* CompanyMapper.swift */; };
@@ -107,6 +116,15 @@
 		D03D6F5020132576006F4F41 /* ProjectViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewData.swift; sourceTree = "<group>"; };
 		D03D6F5420132649006F4F41 /* ProjectViewDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewDataMapper.swift; sourceTree = "<group>"; };
 		D03D6F5920132D94006F4F41 /* ProjectContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectContainer.swift; sourceTree = "<group>"; };
+		D066BA092014C9EB00CC8E78 /* ActivityListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListResponse.swift; sourceTree = "<group>"; };
+		D066BA0C2014CA3900CC8E78 /* ActivityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityResponse.swift; sourceTree = "<group>"; };
+		D066BA0E2014E2B900CC8E78 /* ActivityEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEntry.swift; sourceTree = "<group>"; };
+		D066BA102014EBEA00CC8E78 /* ActivityEntryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEntryMapper.swift; sourceTree = "<group>"; };
+		D066BA122014F51500CC8E78 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		D066BA142014F6BA00CC8E78 /* ActivityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityMapper.swift; sourceTree = "<group>"; };
+		D066BA162014F9FA00CC8E78 /* ProjectDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailPresenter.swift; sourceTree = "<group>"; };
+		D066BA1820150A7C00CC8E78 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		D066BA1920150A7C00CC8E78 /* ActivityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCell.xib; sourceTree = "<group>"; };
 		D0CB713F201332D5007B4073 /* ProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
 		D0CB714220133858007B4073 /* ProjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMapper.swift; sourceTree = "<group>"; };
 		D0CB71442013389C007B4073 /* CompanyMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyMapper.swift; sourceTree = "<group>"; };
@@ -227,6 +245,8 @@
 			children = (
 				AD1A8A9B20108C1900C56F65 /* ProjectCell.swift */,
 				AD1A8A9C20108C1900C56F65 /* ProjectCell.xib */,
+				D066BA1820150A7C00CC8E78 /* ActivityCell.swift */,
+				D066BA1920150A7C00CC8E78 /* ActivityCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,6 +268,7 @@
 			children = (
 				AD1A8AAD2010A8FB00C56F65 /* ApiResponse.swift */,
 				AD1A8AAF2010B25700C56F65 /* ProjectsResponse.swift */,
+				D066BA092014C9EB00CC8E78 /* ActivityListResponse.swift */,
 				AD9883E02010C005001408B9 /* Project */,
 			);
 			path = Responses;
@@ -259,6 +280,7 @@
 				AD9883D82010B4C8001408B9 /* ProjectResponse.swift */,
 				AD9883DC2010BC87001408B9 /* CompanyResponse.swift */,
 				AD9883DE2010BFC3001408B9 /* CategoryResponse.swift */,
+				D066BA0C2014CA3900CC8E78 /* ActivityResponse.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -270,6 +292,7 @@
 				AD9883E52010E587001408B9 /* Category.swift */,
 				AD9883E72010E598001408B9 /* Company.swift */,
 				AD9883DA2010B73F001408B9 /* ProjectStatus.swift */,
+				D066BA122014F51500CC8E78 /* Activity.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -317,6 +340,7 @@
 				D0CB714220133858007B4073 /* ProjectMapper.swift */,
 				D0CB71442013389C007B4073 /* CompanyMapper.swift */,
 				D0CB7146201338B8007B4073 /* CategoryMapper.swift */,
+				D066BA142014F6BA00CC8E78 /* ActivityMapper.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -343,6 +367,7 @@
 				AD9883EE2010E980001408B9 /* ProjectEntryMapper.swift */,
 				AD9883F02010EAEA001408B9 /* CategoryEntryMapper.swift */,
 				AD9883F22010EAFC001408B9 /* CompanyEntryMapper.swift */,
+				D066BA102014EBEA00CC8E78 /* ActivityEntryMapper.swift */,
 			);
 			path = Entries;
 			sourceTree = "<group>";
@@ -353,6 +378,7 @@
 				ADC25F182011D9A700B8CC73 /* ProjectEntry.swift */,
 				ADC25F142011D66D00B8CC73 /* CategoryEntry.swift */,
 				ADC25F162011D89400B8CC73 /* CompanyEntry.swift */,
+				D066BA0E2014E2B900CC8E78 /* ActivityEntry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -380,8 +406,9 @@
 			isa = PBXGroup;
 			children = (
 				D0CB714A20136E73007B4073 /* ProjectDetailViewController.swift */,
-				D0CB715B201386C3007B4073 /* ProjectDetailCoordinator.swift */,
 				D0CB714B20136E73007B4073 /* ProjectDetailViewController.xib */,
+				D066BA162014F9FA00CC8E78 /* ProjectDetailPresenter.swift */,
+				D0CB715B201386C3007B4073 /* ProjectDetailCoordinator.swift */,
 			);
 			path = ProjectDetail;
 			sourceTree = "<group>";
@@ -481,6 +508,7 @@
 				D0CB714D20136E73007B4073 /* ProjectDetailViewController.xib in Resources */,
 				AD1A8AA020108DF200C56F65 /* Podfile in Resources */,
 				AD1A8A9E20108C1900C56F65 /* ProjectCell.xib in Resources */,
+				D066BA1B20150A7C00CC8E78 /* ActivityCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +634,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D066BA112014EBEA00CC8E78 /* ActivityEntryMapper.swift in Sources */,
 				AD1A8AAB2010976000C56F65 /* APISettings.swift in Sources */,
 				AD1A8A7720107D3B00C56F65 /* AppDelegate.swift in Sources */,
 				D0CB7153201381CA007B4073 /* AppCoordinator.swift in Sources */,
@@ -619,19 +648,26 @@
 				D0CB715C201386C3007B4073 /* ProjectDetailCoordinator.swift in Sources */,
 				AD9883F32010EAFC001408B9 /* CompanyEntryMapper.swift in Sources */,
 				AD1A8A9920107E4E00C56F65 /* ProjectsTableViewController.swift in Sources */,
+				D066BA0D2014CA3900CC8E78 /* ActivityResponse.swift in Sources */,
 				AD9883DB2010B73F001408B9 /* ProjectStatus.swift in Sources */,
+				D066BA152014F6BA00CC8E78 /* ActivityMapper.swift in Sources */,
 				AD9883F12010EAEA001408B9 /* CategoryEntryMapper.swift in Sources */,
+				D066BA0A2014C9EB00CC8E78 /* ActivityListResponse.swift in Sources */,
 				AD9883DF2010BFC3001408B9 /* CategoryResponse.swift in Sources */,
 				D03D6F5520132649006F4F41 /* ProjectViewDataMapper.swift in Sources */,
 				D0CB714C20136E73007B4073 /* ProjectDetailViewController.swift in Sources */,
+				D066BA1A20150A7C00CC8E78 /* ActivityCell.swift in Sources */,
 				D0CB71452013389C007B4073 /* CompanyMapper.swift in Sources */,
+				D066BA0F2014E2B900CC8E78 /* ActivityEntry.swift in Sources */,
 				D0CB715120138188007B4073 /* Coordinator.swift in Sources */,
+				D066BA172014F9FA00CC8E78 /* ProjectDetailPresenter.swift in Sources */,
 				AD9883EB2010E907001408B9 /* Mapper.swift in Sources */,
 				D0CB7140201332D5007B4073 /* ProjectService.swift in Sources */,
 				ADC25F152011D66D00B8CC73 /* CategoryEntry.swift in Sources */,
 				D03D6F5A20132D94006F4F41 /* ProjectContainer.swift in Sources */,
 				D0CB715620138355007B4073 /* Color.swift in Sources */,
 				D0CB714920134375007B4073 /* ProjectsPresenter.swift in Sources */,
+				D066BA132014F51500CC8E78 /* Activity.swift in Sources */,
 				AD1A8AA52010962900C56F65 /* APIClient.swift in Sources */,
 				D0CB715920138438007B4073 /* ProjectsCoordinator.swift in Sources */,
 				D0CB714320133858007B4073 /* ProjectMapper.swift in Sources */,
