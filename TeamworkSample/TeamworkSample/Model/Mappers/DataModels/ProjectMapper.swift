@@ -18,6 +18,7 @@ struct ProjectMapper: Mapper {
                        description: input.desc,
                        category: CategoryMapper.map(input: input.category),
                        company: CompanyMapper.map(input: input.company),
-                       logo: URL(string: input.logo))
+                       logo: URL(string: input.logo),
+                       status: input.status)
     }
 }

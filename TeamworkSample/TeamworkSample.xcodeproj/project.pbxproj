@@ -238,7 +238,6 @@
 				AD1A8AA42010962900C56F65 /* APIClient.swift */,
 				AD1A8AA62010963D00C56F65 /* Endpoint.swift */,
 				AD1A8AA82010964C00C56F65 /* ApiError.swift */,
-				AD9883DA2010B73F001408B9 /* ProjectStatus.swift */,
 				AD1A8AAC2010A88600C56F65 /* Responses */,
 			);
 			path = API;
@@ -270,6 +269,7 @@
 				AD9883E32010E501001408B9 /* Project.swift */,
 				AD9883E52010E587001408B9 /* Category.swift */,
 				AD9883E72010E598001408B9 /* Company.swift */,
+				AD9883DA2010B73F001408B9 /* ProjectStatus.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";

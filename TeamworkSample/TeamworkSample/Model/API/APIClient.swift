@@ -56,7 +56,7 @@ class APIClient {
 
 //MARK: - Public
 extension APIClient {
-    public static func projects(status: ProjectStatus = .active,
+    public static func projects(status: ProjectStatus = .all,
                                 success: @escaping (ProjectsResponse)->(),
                                 fail: @escaping (ApiError)->()) {
         self.request(endpoint: .projects(status: status),

@@ -30,8 +30,8 @@ class ProjectsPresenter {
         projectsView = nil
     }
     
-    func getProjects() {
-        let projects = projectService.fetchProjects()
+    func getProjects(status: ProjectStatus = .all) {
+        let projects = projectService.fetchProjects(status: status)
         let projectsViewModel = projects.map{ ProjectViewDataMapper.map(input: $0) }
         projectsView?.setProjects(projects: projectsViewModel)
     }

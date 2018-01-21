@@ -15,11 +15,11 @@ class ProjectService {
         return ProjectContainer()
     }()
     
-    func fetchProjects() -> [Project] {
+    func fetchProjects(status: ProjectStatus) -> [Project] {
         if isCacheData {
-            getServerProjects()
+            getAllServerProjects()
         }
-        let entries = projectContainer.getProjects()
+        let entries = projectContainer.getProjects(status: status)
         let projects = entries.map{ ProjectMapper.map(input: $0) }
         return projects.map{ $0 }
     }
@@ -34,7 +34,7 @@ class ProjectService {
         }
     }
     
-    fileprivate func getServerProjects() {
+    fileprivate func getAllServerProjects() {
         APIClient.projects(success: { response in
             if let projects = response.projects {
                 self.isCacheData = false

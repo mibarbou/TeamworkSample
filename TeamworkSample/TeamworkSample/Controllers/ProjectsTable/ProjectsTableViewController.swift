@@ -24,17 +24,39 @@ class ProjectsTableViewController: UITableViewController {
         }
     }
     
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func setup(){
-        self.title = "Projects"
         let nib = UINib(nibName: ProjectCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: ProjectCell.identifier)
+        addSegmentedControl()
+    }
+    
+    func addSegmentedControl() {
+        let segmentedControl = UISegmentedControl(items: ["ALL", "ACTIVE", "ARCHIVED"])
+        segmentedControl.frame = CGRect(x: 0,
+                                        y: 0,
+                                        width: 150,
+                                        height: 20)
+        self.navigationItem.titleView = segmentedControl
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.addTarget(self,
+                                   action: #selector(ProjectsTableViewController.changeValue(sender:)),
+                                   for: .valueChanged)
+    }
+    
+    @objc func changeValue(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 1:
+            presenter.getProjects(status: .active)
+        case 2:
+            presenter.getProjects(status: .archived)
+        default:
+            presenter.getProjects()
+        }
     }
 
     // MARK: - Table view data source
@@ -72,6 +94,7 @@ extension ProjectsTableViewController: ProjectsView {
     
     func setProjects(projects: [ProjectViewData]) {
         projectsToDisplay = projects
+        self.tableView.reloadData()
     }    
 }
 

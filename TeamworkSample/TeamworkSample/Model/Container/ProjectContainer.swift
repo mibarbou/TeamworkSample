@@ -23,8 +23,17 @@ final public class ProjectContainer {
         notificationToken?.invalidate()
     }
     
-    func getProjects() -> Results<ProjectEntry> {
-        return self.container.objects(ProjectEntry.self)
+    func getProjects(status: ProjectStatus = .all) -> Results<ProjectEntry> {
+        switch status {
+        case .all:
+            return self.container.objects(ProjectEntry.self)
+        case .active:
+            return self.container.objects(ProjectEntry.self).filter("status = 'active'")
+        case .archived:
+            return self.container.objects(ProjectEntry.self).filter("status = 'archived'")
+        default:
+            return self.container.objects(ProjectEntry.self)
+        }
     }
     
     func getProject(index: Int) -> ProjectEntry {
@@ -33,6 +42,14 @@ final public class ProjectContainer {
     
     func projectsCount() -> Int {
         return getProjects().count
+    }
+    
+    func getCategories() -> Results<CategoryEntry> {
+        return self.container.objects(CategoryEntry.self)
+    }
+    
+    func getCategoriesCount() -> Int {
+        return getCategories().count
     }
     
     func save(projects: [ProjectEntry]) {

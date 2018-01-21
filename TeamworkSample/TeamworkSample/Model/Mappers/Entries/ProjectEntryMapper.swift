@@ -17,10 +17,12 @@ struct ProjectEntryMapper: Mapper {
         entry.id = input.id
         if let name = input.name,
             let description = input.description,
-            let logo = input.logo {
+            let logo = input.logo,
+            let status = input.status {
                 entry.name = name
                 entry.desc = description
                 entry.logo = logo
+                entry.status = status
         }
         entry.category = CategoryEntryMapper.map(input: input.category)
         entry.company = CompanyEntryMapper.map(input: input.company)
