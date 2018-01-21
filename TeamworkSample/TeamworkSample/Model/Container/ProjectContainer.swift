@@ -13,6 +13,7 @@ final public class ProjectContainer {
     
     fileprivate let container: Realm
     fileprivate var notificationToken: NotificationToken? = nil
+    fileprivate var status: ProjectStatus = .all
     
     init() {
         self.container = try! Realm()
@@ -24,6 +25,7 @@ final public class ProjectContainer {
     }
     
     func getProjects(status: ProjectStatus = .all) -> Results<ProjectEntry> {
+        self.status = status
         switch status {
         case .all:
             return self.container.objects(ProjectEntry.self)
@@ -37,19 +39,41 @@ final public class ProjectContainer {
     }
     
     func getProject(index: Int) -> ProjectEntry {
-        return getProjects()[index]
+        return getProjects(status: self.status)[index]
     }
     
     func projectsCount() -> Int {
-        return getProjects().count
+        return getProjects(status: self.status).count
     }
     
-    func getCategories() -> Results<CategoryEntry> {
-        return self.container.objects(CategoryEntry.self)
+    func getCompanies() -> Results<CompanyEntry> {
+        return self.container.objects(CompanyEntry.self)
     }
     
-    func getCategoriesCount() -> Int {
-        return getCategories().count
+    func companiesCount() -> Int {
+        return getCompanies().count
+    }
+    
+    func companyNameAt(index: Int) -> String {
+        let category = getCompanies()[index]
+        let projects = getProjects(status: self.status).filter("company.id == %@", category.id)
+        if projects.count > 0 {
+            return category.name
+        }
+        return ""
+    }
+    
+    func projectsCountAt(index: Int) -> Int {
+        let categoryId = getCompanies()[index].id
+        let projects = getProjects(status: self.status).filter("company.id == %@", categoryId)
+        return projects.count
+    }
+    
+    func projectAt(indexPath: IndexPath) -> ProjectEntry {
+        let categoryId = getCompanies()[indexPath.section].id
+        let projects = getProjects(status: self.status).filter("company.id == %@", categoryId)
+        let project = projects[indexPath.row]
+        return project
     }
     
     func save(projects: [ProjectEntry]) {

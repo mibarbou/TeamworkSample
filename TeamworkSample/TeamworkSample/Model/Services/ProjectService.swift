@@ -28,6 +28,23 @@ class ProjectService {
         return projectContainer.projectsCount()
     }
     
+    func companiesCount() -> Int {
+        return projectContainer.companiesCount()
+    }
+    
+    func projectsCountAt(index: Int) -> Int {
+        return projectContainer.projectsCountAt(index: index)
+    }
+    
+    func projectAt(indexPath: IndexPath) -> Project {
+        let projectEntry = projectContainer.projectAt(indexPath: indexPath)
+        return ProjectMapper.map(input: projectEntry)
+    }
+    
+    func companyNameAt(index: Int) -> String {
+        return projectContainer.companyNameAt(index: index)
+    }
+    
     func reloadData(callback: @escaping ()->()) {
         projectContainer.subscribeToUpdatedData {
             callback()

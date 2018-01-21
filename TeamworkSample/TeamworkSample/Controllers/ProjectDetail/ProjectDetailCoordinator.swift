@@ -10,10 +10,10 @@ import UIKit
 
 final class ProjectDetailCoordinator: Coordinator {
     
-    private let project: ProjectViewData
+    private let project: Project
     private unowned let navigationController: UINavigationController
     
-    init(project: ProjectViewData, navigationController: UINavigationController) {
+    init(project: Project, navigationController: UINavigationController) {
         self.project = project
         self.navigationController = navigationController
     }

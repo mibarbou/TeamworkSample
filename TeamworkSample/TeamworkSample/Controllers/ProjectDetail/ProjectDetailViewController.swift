@@ -10,9 +10,9 @@ import UIKit
 
 class ProjectDetailViewController: UIViewController {
     
-    let project: ProjectViewData
+    let project: Project
     
-    init(project: ProjectViewData) {
+    init(project: Project) {
         self.project = project
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }

@@ -11,17 +11,14 @@ import UIKit
 class ProjectsTableViewController: UITableViewController {
     
     private let presenter = ProjectsPresenter(projectService: ProjectService())
-    private var projectsToDisplay = [ProjectViewData]()
-    var didSelectProject: (ProjectViewData) -> Void = { _ in }
+    var didSelectProject: (Project) -> Void = { _ in }
   
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         presenter.attachView(view: self)
         presenter.getProjects()
-        presenter.reloadTableViewDataNotification {
-            self.tableView.reloadData()
-        }
+        presenter.reloadTableViewDataNotification()
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,27 +59,36 @@ class ProjectsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return presenter.sectionsCount()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return projectsToDisplay.count
+        return presenter.numbersOfRowsAt(section: section)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProjectCell.identifier, for: indexPath) as! ProjectCell
-        let project = projectsToDisplay[indexPath.row]
-        cell.configureCell(project: project)
+        let project = presenter.projectAt(indexPath: indexPath)
+        cell.nameLabel.text = project.name
+//        cell.configureCell(project: project)
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return presenter.sectionNameAt(index: section)
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let project = projectsToDisplay[indexPath.row]
+        let project = presenter.projectAt(indexPath: indexPath)
         didSelectProject(project)
     }
 }
 
 extension ProjectsTableViewController: ProjectsView {
+    func loadData() {
+        self.tableView.reloadData()
+    }
+    
 
     func startLoading() {
         
@@ -91,11 +97,6 @@ extension ProjectsTableViewController: ProjectsView {
     func finishLoading() {
         
     }
-    
-    func setProjects(projects: [ProjectViewData]) {
-        projectsToDisplay = projects
-        self.tableView.reloadData()
-    }    
 }
 
 

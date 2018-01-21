@@ -11,7 +11,7 @@ import Foundation
 protocol ProjectsView: NSObjectProtocol {
     func startLoading()
     func finishLoading()
-    func setProjects(projects: [ProjectViewData])
+    func loadData()
 }
 
 class ProjectsPresenter {
@@ -31,15 +31,29 @@ class ProjectsPresenter {
     }
     
     func getProjects(status: ProjectStatus = .all) {
-        let projects = projectService.fetchProjects(status: status)
-        let projectsViewModel = projects.map{ ProjectViewDataMapper.map(input: $0) }
-        projectsView?.setProjects(projects: projectsViewModel)
+        let _ = projectService.fetchProjects(status: status)
+        projectsView?.loadData()
     }
     
-    func reloadTableViewDataNotification(reload: @escaping ()->()) {
+    func sectionsCount() -> Int {
+       return projectService.companiesCount()
+    }
+    
+    func numbersOfRowsAt(section: Int) -> Int {
+        return projectService.projectsCountAt(index: section)
+    }
+
+    func projectAt(indexPath: IndexPath) -> Project {
+        return projectService.projectAt(indexPath: indexPath)
+    }
+    
+    func sectionNameAt(index: Int) -> String {
+        return projectService.companyNameAt(index: index)
+    }
+    
+    func reloadTableViewDataNotification() {
         projectService.reloadData {
             self.getProjects()
-            reload()
         }
     }
 }
