@@ -33,7 +33,7 @@ final public class ProjectContainer {
         notificationToken?.invalidate()
     }
     
-    func getProjects(status: ProjectStatus = .all) -> Results<ProjectEntry> {
+    func getProjects(status: ProjectStatus) -> Results<ProjectEntry> {
         self.status = status
         switch status {
         case .all:
@@ -51,8 +51,8 @@ final public class ProjectContainer {
         return getProjects(status: self.status)[index]
     }
     
-    func projectsCount() -> Int {
-        return getProjects(status: self.status).count
+    func projectsCount(status: ProjectStatus = .all) -> Int {
+        return getProjects(status: status).count
     }
     
     func getCompanies() -> Results<CompanyEntry> {

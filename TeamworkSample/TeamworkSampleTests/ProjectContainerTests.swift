@@ -16,7 +16,6 @@ class ProjectContainerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        container.deleteAll()
     }
     
     override func tearDown() {
@@ -33,28 +32,55 @@ class ProjectContainerTests: XCTestCase {
         XCTAssertEqual(companiesCount, 2)
     }
 
-//    func testGetAllProjects() {
-//        container.save(projects: getEntriesArray())
-//        let projectsCount = container.getProjects(status: .all).count
-//        XCTAssertEqual(projectsCount, 3)
-//        container.deleteAll()
-//    }
+    func testGetAllProjects() {
+        container.save(projects: getEntriesArray())
+        let projectsCount = container.projectsCount(status: .all)
+        XCTAssertEqual(projectsCount, 3)
+    }
 
-//    func testGetActiveProjects() {
-//        container.deleteAll()
-//        container.save(projects: getEntriesArray())
-//        let activeProjectsCount = container.getProjects(status: .active).count
-//        XCTAssertEqual(activeProjectsCount, 2)
-//        container.deleteAll()
-//    }
-//
-//    func testGetArchivedProjects() {
-//        container.deleteAll()
-//        container.save(projects: getEntriesArray())
-//        let archivedProjectsCount = container.getProjects(status: .archived).count
-//        XCTAssertEqual(archivedProjectsCount, 1)
-//        container.deleteAll()
-//    }
+    func testGetActiveProjects() {
+        container.save(projects: getEntriesArray())
+        let activeProjectsCount = container.projectsCount(status: .active)
+        XCTAssertEqual(activeProjectsCount, 2)
+    }
+
+    func testGetArchivedProjects() {
+        container.save(projects: getEntriesArray())
+        let archivedProjectsCount = container.projectsCount(status: .archived)
+        XCTAssertEqual(archivedProjectsCount, 1)
+    }
+    
+    func testGetProjectAtIndexPath() {
+        container.save(projects: getEntriesArray())
+        let indexPath1 = IndexPath(row: 1, section: 0)
+        let project2 = container.projectAt(indexPath: indexPath1)
+        XCTAssertEqual(project2.id, "2")
+        
+        let indexPath2 = IndexPath(row: 0, section: 1)
+        let project3 = container.projectAt(indexPath: indexPath2)
+        XCTAssertEqual(project3.id, "3")
+    }
+    
+    func testGetProjectsCountAtIndex() {
+        container.save(projects: getEntriesArray())
+        XCTAssertEqual(container.projectsCountAt(index: 0), 2)
+        XCTAssertEqual(container.projectsCountAt(index: 1), 1)
+    }
+    
+    func testSaveUpdates() {
+        container.save(projects: getEntriesArray())
+        container.save(projects: getEntriesArray())
+        let projectsCount = container.projectsCount(status: .all)
+        XCTAssertEqual(projectsCount, 3)
+    }
+    
+    func testCompanyNameAtIndex() {
+        container.save(projects: getEntriesArray())
+        let companyName1 = container.companyNameAt(index: 0)
+        XCTAssertEqual(companyName1, "Company 1")
+        let companyName2 = container.companyNameAt(index: 1)
+        XCTAssertEqual(companyName2, "Company 3")
+    }
 }
 
 
