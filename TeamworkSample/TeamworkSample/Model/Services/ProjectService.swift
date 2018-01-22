@@ -12,7 +12,7 @@ class ProjectService {
     fileprivate var isCacheData = true
     
     fileprivate lazy var projectContainer = {
-        return ProjectContainer()
+        return ProjectContainer(name: "teamwork")
     }()
     
     func fetchProjects(status: ProjectStatus) -> [Project] {

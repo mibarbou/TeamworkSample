@@ -3,13 +3,14 @@ platform :ios, '9.0'
 target 'TeamworkSample' do
   use_frameworks!
 
-pod 'Alamofire'
-pod 'Gloss'
-pod 'RealmSwift'
-pod 'Kingfisher'
+    pod 'Alamofire'
+    pod 'Gloss'
+    pod 'RealmSwift'
+    pod 'Kingfisher'
 
   target 'TeamworkSampleTests' do
     inherit! :search_paths
+
   end
 end
 

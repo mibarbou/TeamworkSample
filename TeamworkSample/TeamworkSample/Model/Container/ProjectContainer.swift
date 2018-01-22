@@ -15,9 +15,18 @@ final public class ProjectContainer {
     fileprivate var notificationToken: NotificationToken? = nil
     fileprivate var status: ProjectStatus = .all
     
-    init() {
+    init(name: String) {
+        var config = Realm.Configuration()
+        // Use the default directory, but replace the filename with the username
+        config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("\(name).realm")
+        // Set this as the configuration used for the default Realm
+        Realm.Configuration.defaultConfiguration = config
+        self.container = try! Realm(configuration: config)
+    }
+    
+    init(testName: String) {
+        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = testName
         self.container = try! Realm()
-        self.container.autorefresh = true
     }
     
     deinit {

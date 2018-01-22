@@ -12,7 +12,6 @@
 		AD1A8A7720107D3B00C56F65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A8A7620107D3B00C56F65 /* AppDelegate.swift */; };
 		AD1A8A7E20107D3B00C56F65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1A8A7D20107D3B00C56F65 /* Assets.xcassets */; };
 		AD1A8A8120107D3B00C56F65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1A8A7F20107D3B00C56F65 /* LaunchScreen.storyboard */; };
-		AD1A8A8C20107D3B00C56F65 /* TeamworkSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A8A8B20107D3B00C56F65 /* TeamworkSampleTests.swift */; };
 		AD1A8A9920107E4E00C56F65 /* ProjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A8A9820107E4E00C56F65 /* ProjectsTableViewController.swift */; };
 		AD1A8A9D20108C1900C56F65 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A8A9B20108C1900C56F65 /* ProjectCell.swift */; };
 		AD1A8A9E20108C1900C56F65 /* ProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1A8A9C20108C1900C56F65 /* ProjectCell.xib */; };
@@ -48,6 +47,7 @@
 		D03D6F5120132576006F4F41 /* ProjectViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D6F5020132576006F4F41 /* ProjectViewData.swift */; };
 		D03D6F5520132649006F4F41 /* ProjectViewDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D6F5420132649006F4F41 /* ProjectViewDataMapper.swift */; };
 		D03D6F5A20132D94006F4F41 /* ProjectContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D6F5920132D94006F4F41 /* ProjectContainer.swift */; };
+		D049962E20167B8C00746C64 /* ProjectContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049962D20167B8C00746C64 /* ProjectContainerTests.swift */; };
 		D066BA0A2014C9EB00CC8E78 /* ActivityListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066BA092014C9EB00CC8E78 /* ActivityListResponse.swift */; };
 		D066BA0D2014CA3900CC8E78 /* ActivityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066BA0C2014CA3900CC8E78 /* ActivityResponse.swift */; };
 		D066BA0F2014E2B900CC8E78 /* ActivityEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066BA0E2014E2B900CC8E78 /* ActivityEntry.swift */; };
@@ -69,6 +69,9 @@
 		D0CB715620138355007B4073 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB715520138355007B4073 /* Color.swift */; };
 		D0CB715920138438007B4073 /* ProjectsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB715820138438007B4073 /* ProjectsCoordinator.swift */; };
 		D0CB715C201386C3007B4073 /* ProjectDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB715B201386C3007B4073 /* ProjectDetailCoordinator.swift */; };
+		D0D0CCF12016499A008B5D2F /* activeProjects.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D0CCF02016499A008B5D2F /* activeProjects.json */; };
+		D0D0CCF420164A5A008B5D2F /* UtilMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D0CCF320164A5A008B5D2F /* UtilMock.swift */; };
+		D0D0CD082016663E008B5D2F /* MappersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D0CD072016663E008B5D2F /* MappersTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +95,6 @@
 		AD1A8A8020107D3B00C56F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD1A8A8220107D3B00C56F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD1A8A8720107D3B00C56F65 /* TeamworkSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeamworkSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD1A8A8B20107D3B00C56F65 /* TeamworkSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamworkSampleTests.swift; sourceTree = "<group>"; };
 		AD1A8A8D20107D3B00C56F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD1A8A9820107E4E00C56F65 /* ProjectsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewController.swift; sourceTree = "<group>"; };
 		AD1A8A9B20108C1900C56F65 /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		D03D6F5020132576006F4F41 /* ProjectViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewData.swift; sourceTree = "<group>"; };
 		D03D6F5420132649006F4F41 /* ProjectViewDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewDataMapper.swift; sourceTree = "<group>"; };
 		D03D6F5920132D94006F4F41 /* ProjectContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectContainer.swift; sourceTree = "<group>"; };
+		D049962D20167B8C00746C64 /* ProjectContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectContainerTests.swift; sourceTree = "<group>"; };
 		D066BA092014C9EB00CC8E78 /* ActivityListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListResponse.swift; sourceTree = "<group>"; };
 		D066BA0C2014CA3900CC8E78 /* ActivityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityResponse.swift; sourceTree = "<group>"; };
 		D066BA0E2014E2B900CC8E78 /* ActivityEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEntry.swift; sourceTree = "<group>"; };
@@ -151,6 +154,9 @@
 		D0CB715520138355007B4073 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D0CB715820138438007B4073 /* ProjectsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCoordinator.swift; sourceTree = "<group>"; };
 		D0CB715B201386C3007B4073 /* ProjectDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailCoordinator.swift; sourceTree = "<group>"; };
+		D0D0CCF02016499A008B5D2F /* activeProjects.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = activeProjects.json; sourceTree = "<group>"; };
+		D0D0CCF320164A5A008B5D2F /* UtilMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilMock.swift; sourceTree = "<group>"; };
+		D0D0CD072016663E008B5D2F /* MappersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappersTests.swift; sourceTree = "<group>"; };
 		E002DFFAD67F106BB22BAE75 /* Pods-TeamworkSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamworkSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamworkSample/Pods-TeamworkSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,7 +232,10 @@
 		AD1A8A8A20107D3B00C56F65 /* TeamworkSampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				AD1A8A8B20107D3B00C56F65 /* TeamworkSampleTests.swift */,
+				D049962D20167B8C00746C64 /* ProjectContainerTests.swift */,
+				D0D0CD072016663E008B5D2F /* MappersTests.swift */,
+				D0D0CCF2201649F3008B5D2F /* Utils */,
+				D0D0CCEF20164963008B5D2F /* jsonMocks */,
 				AD1A8A8D20107D3B00C56F65 /* Info.plist */,
 			);
 			path = TeamworkSampleTests;
@@ -434,6 +443,22 @@
 			path = ProjectDetail;
 			sourceTree = "<group>";
 		};
+		D0D0CCEF20164963008B5D2F /* jsonMocks */ = {
+			isa = PBXGroup;
+			children = (
+				D0D0CCF02016499A008B5D2F /* activeProjects.json */,
+			);
+			path = jsonMocks;
+			sourceTree = "<group>";
+		};
+		D0D0CCF2201649F3008B5D2F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D0D0CCF320164A5A008B5D2F /* UtilMock.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -539,6 +564,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D0CCF12016499A008B5D2F /* activeProjects.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,7 +742,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD1A8A8C20107D3B00C56F65 /* TeamworkSampleTests.swift in Sources */,
+				D0D0CD082016663E008B5D2F /* MappersTests.swift in Sources */,
+				D049962E20167B8C00746C64 /* ProjectContainerTests.swift in Sources */,
+				D0D0CCF420164A5A008B5D2F /* UtilMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

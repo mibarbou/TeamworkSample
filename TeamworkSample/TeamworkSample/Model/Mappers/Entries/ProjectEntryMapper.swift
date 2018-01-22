@@ -34,5 +34,4 @@ struct ProjectEntryMapper: Mapper {
         entry.company = CompanyEntryMapper.map(input: input.company)
         return entry
     }
-
 }
