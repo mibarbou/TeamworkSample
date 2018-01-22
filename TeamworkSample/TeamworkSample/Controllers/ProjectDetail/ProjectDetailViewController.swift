@@ -74,14 +74,14 @@ extension ProjectDetailViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section > 0 {
+        if section == 1 {
             return activityList.count
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section > 0 {
+        if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: ActivityCell.identifier, for: indexPath) as! ActivityCell
             let activity = self.activityList[indexPath.row]
             cell.configureCell(activity: activity)

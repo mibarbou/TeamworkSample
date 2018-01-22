@@ -33,13 +33,13 @@ class ActivityCell: UITableViewCell {
     
     func configureCell(activity: Activity) {
         let viewModel = ActivityViewDataMapper.map(input: activity)
-        todoNameLabel.text = viewModel.todoListName
+        todoNameLabel.text = (viewModel.todoListName == "" ? "UNKNOWN": viewModel.todoListName)
         descriptionLabel.text = viewModel.description
-        dateLabel.text = viewModel.dateTime
-        forUserImageView.kf.setImage(with: activity.forUserAvatarUrl)
-        forUserNameLabel.text = viewModel.forUsername
-        fromUserImageView.kf.setImage(with: activity.fromUserAvatarUrl)
-        fromUserNameLabel.text = viewModel.forUsername
+        dateLabel.text = (viewModel.dateTime == "" ? "--": viewModel.dateTime)
+        forUserImageView.kf.setImage(with: activity.forUserAvatarUrl, placeholder: UIImage(named: "avatarIcon"))
+        forUserNameLabel.text = (viewModel.forUsername == "" ? "username": viewModel.forUsername)
+        fromUserImageView.kf.setImage(with: activity.fromUserAvatarUrl, placeholder: UIImage(named: "avatarIcon"))
+        fromUserNameLabel.text = (viewModel.fromUsername == "" ? "username": viewModel.fromUsername)
     }
     
 }

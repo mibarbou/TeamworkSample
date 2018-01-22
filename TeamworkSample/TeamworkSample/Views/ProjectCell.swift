@@ -34,7 +34,7 @@ class ProjectCell: UITableViewCell {
         let viewModel = ProjectViewDataMapper.map(input: project)
         nameLabel.text = viewModel.name
         descriptionLabel.text = viewModel.description
-        logoImageView.kf.setImage(with: project.logo)
+        logoImageView.kf.setImage(with: project.logo, placeholder: UIImage(named: "projectIcon"))
         creationDateLabel.text = "created on: " + (viewModel.createdOn == "" ? "--": viewModel.createdOn)
         startDateLabel.text = "start date: " + (viewModel.startDate == "" ? "--": viewModel.startDate)
         endDateLabel.text = "end date: " + (viewModel.endDate == "" ? "--": viewModel.endDate)

@@ -33,7 +33,7 @@ class ProjectHeaderCell: UITableViewCell {
         let viewModel = ProjectViewDataMapper.map(input: project)
         descriptionTextView.text = viewModel.description
         descriptionTextView.sizeToFit()
-        logoImageView.kf.setImage(with: project.logo)
+        logoImageView.kf.setImage(with: project.logo, placeholder: UIImage(named: "projectIcon"))
         creationDateLabel.text = "created on: " + (viewModel.createdOn == "" ? "--": viewModel.createdOn)
         startDateLabel.text = "start date: " + (viewModel.startDate == "" ? "--": viewModel.startDate)
         endDateLabel.text = "end date: " + (viewModel.endDate == "" ? "--": viewModel.endDate)
