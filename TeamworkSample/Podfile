@@ -6,6 +6,7 @@ target 'TeamworkSample' do
 pod 'Alamofire'
 pod 'Gloss'
 pod 'RealmSwift'
+pod 'Kingfisher'
 
   target 'TeamworkSampleTests' do
     inherit! :search_paths

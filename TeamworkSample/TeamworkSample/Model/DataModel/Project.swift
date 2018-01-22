@@ -16,4 +16,7 @@ struct Project {
     let company:            Company?
     let logo:               URL?
     let status:             String
+    let createdOn:          Date?
+    let startDate:          Date?
+    let endDate:            Date?
 }

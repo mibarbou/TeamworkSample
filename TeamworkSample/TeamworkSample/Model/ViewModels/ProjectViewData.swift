@@ -14,4 +14,7 @@ struct ProjectViewData {
     let description:        String
     let category:           String
     let company:            String
+    let createdOn:          String
+    let startDate:          String
+    let endDate:            String
 }

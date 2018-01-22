@@ -19,21 +19,17 @@ final class AppCoordinator: Coordinator {
     
     override func start() {
         customizeAppearance()
-        
         window.rootViewController = navigationController
-        
-        // The volume list is the initial screen
         let coordinator = ProjectsCoordinator(navigationController: navigationController)
-        
         add(child: coordinator)
         coordinator.start()
-        
         window.makeKeyAndVisible()
     }
     
     private func customizeAppearance() {
         let navigationBarAppearance = UINavigationBar.appearance()
         let barTintColor = UIColor(named: .bar)
+        let backgroundColor = UIColor(named: .background)
         
         navigationBarAppearance.barStyle = .black // This will make the status bar white by default
         navigationBarAppearance.barTintColor = barTintColor
@@ -41,5 +37,7 @@ final class AppCoordinator: Coordinator {
         navigationBarAppearance.titleTextAttributes = [
             NSAttributedStringKey.foregroundColor: UIColor.white
         ]
+        UITableViewHeaderFooterView.appearance().tintColor = .lightGray
+        UITableView.appearance().tintColor = backgroundColor
     }
 }

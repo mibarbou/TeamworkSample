@@ -67,7 +67,7 @@ class ProjectService {
                 self.projectContainer.save(projects: entries)
             }
         }) { (error) in
-            
+            // TO-DO
         }
     }
     
@@ -81,7 +81,7 @@ class ProjectService {
                 self.projectContainer.saveProjectActivity(id: id, activity: entries)
             }
         }) { (error) in
-            
+            // TO-DO
         }
     }
 }

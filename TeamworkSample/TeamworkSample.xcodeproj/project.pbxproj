@@ -24,6 +24,13 @@
 		AD1A8AAB2010976000C56F65 /* APISettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A8AAA2010976000C56F65 /* APISettings.swift */; };
 		AD1A8AAE2010A8FB00C56F65 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A8AAD2010A8FB00C56F65 /* ApiResponse.swift */; };
 		AD1A8AB02010B25700C56F65 /* ProjectsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A8AAF2010B25700C56F65 /* ProjectsResponse.swift */; };
+		AD648DAD2015D3AE00B30948 /* DateFormatter+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD648DAC2015D3AE00B30948 /* DateFormatter+utils.swift */; };
+		AD648DB02015EC8500B30948 /* ProjectHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD648DAE2015EC8500B30948 /* ProjectHeaderCell.swift */; };
+		AD648DB12015EC8500B30948 /* ProjectHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD648DAF2015EC8500B30948 /* ProjectHeaderCell.xib */; };
+		AD648DB42015F75E00B30948 /* ActivityHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD648DB22015F75E00B30948 /* ActivityHeaderCell.swift */; };
+		AD648DB52015F75E00B30948 /* ActivityHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD648DB32015F75E00B30948 /* ActivityHeaderCell.xib */; };
+		AD648DB720160A3E00B30948 /* ActivityViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD648DB620160A3E00B30948 /* ActivityViewData.swift */; };
+		AD648DB920160A9F00B30948 /* ActivityViewDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD648DB820160A9F00B30948 /* ActivityViewDataMapper.swift */; };
 		AD9883D92010B4C8001408B9 /* ProjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9883D82010B4C8001408B9 /* ProjectResponse.swift */; };
 		AD9883DB2010B73F001408B9 /* ProjectStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9883DA2010B73F001408B9 /* ProjectStatus.swift */; };
 		AD9883DD2010BC87001408B9 /* CompanyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9883DC2010BC87001408B9 /* CompanyResponse.swift */; };
@@ -98,6 +105,13 @@
 		AD1A8AAA2010976000C56F65 /* APISettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISettings.swift; sourceTree = "<group>"; };
 		AD1A8AAD2010A8FB00C56F65 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		AD1A8AAF2010B25700C56F65 /* ProjectsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsResponse.swift; sourceTree = "<group>"; };
+		AD648DAC2015D3AE00B30948 /* DateFormatter+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+utils.swift"; sourceTree = "<group>"; };
+		AD648DAE2015EC8500B30948 /* ProjectHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeaderCell.swift; sourceTree = "<group>"; };
+		AD648DAF2015EC8500B30948 /* ProjectHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectHeaderCell.xib; sourceTree = "<group>"; };
+		AD648DB22015F75E00B30948 /* ActivityHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHeaderCell.swift; sourceTree = "<group>"; };
+		AD648DB32015F75E00B30948 /* ActivityHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityHeaderCell.xib; sourceTree = "<group>"; };
+		AD648DB620160A3E00B30948 /* ActivityViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewData.swift; sourceTree = "<group>"; };
+		AD648DB820160A9F00B30948 /* ActivityViewDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewDataMapper.swift; sourceTree = "<group>"; };
 		AD9883D82010B4C8001408B9 /* ProjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectResponse.swift; sourceTree = "<group>"; };
 		AD9883DA2010B73F001408B9 /* ProjectStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectStatus.swift; sourceTree = "<group>"; };
 		AD9883DC2010BC87001408B9 /* CompanyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyResponse.swift; sourceTree = "<group>"; };
@@ -247,6 +261,10 @@
 				AD1A8A9C20108C1900C56F65 /* ProjectCell.xib */,
 				D066BA1820150A7C00CC8E78 /* ActivityCell.swift */,
 				D066BA1920150A7C00CC8E78 /* ActivityCell.xib */,
+				AD648DAE2015EC8500B30948 /* ProjectHeaderCell.swift */,
+				AD648DAF2015EC8500B30948 /* ProjectHeaderCell.xib */,
+				AD648DB22015F75E00B30948 /* ActivityHeaderCell.swift */,
+				AD648DB32015F75E00B30948 /* ActivityHeaderCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -291,8 +309,8 @@
 				AD9883E32010E501001408B9 /* Project.swift */,
 				AD9883E52010E587001408B9 /* Category.swift */,
 				AD9883E72010E598001408B9 /* Company.swift */,
-				AD9883DA2010B73F001408B9 /* ProjectStatus.swift */,
 				D066BA122014F51500CC8E78 /* Activity.swift */,
+				AD9883DA2010B73F001408B9 /* ProjectStatus.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -330,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				D03D6F5020132576006F4F41 /* ProjectViewData.swift */,
+				AD648DB620160A3E00B30948 /* ActivityViewData.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -349,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				D03D6F5420132649006F4F41 /* ProjectViewDataMapper.swift */,
+				AD648DB820160A9F00B30948 /* ActivityViewDataMapper.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -388,6 +408,7 @@
 			children = (
 				D0CB715020138188007B4073 /* Coordinator.swift */,
 				D0CB715520138355007B4073 /* Color.swift */,
+				AD648DAC2015D3AE00B30948 /* DateFormatter+utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -507,7 +528,9 @@
 				AD1A8AA220108E0E00C56F65 /* README.md in Resources */,
 				D0CB714D20136E73007B4073 /* ProjectDetailViewController.xib in Resources */,
 				AD1A8AA020108DF200C56F65 /* Podfile in Resources */,
+				AD648DB52015F75E00B30948 /* ActivityHeaderCell.xib in Resources */,
 				AD1A8A9E20108C1900C56F65 /* ProjectCell.xib in Resources */,
+				AD648DB12015EC8500B30948 /* ProjectHeaderCell.xib in Resources */,
 				D066BA1B20150A7C00CC8E78 /* ActivityCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,6 +572,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TeamworkSample/Pods-TeamworkSample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
@@ -556,6 +580,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -636,12 +661,14 @@
 			files = (
 				D066BA112014EBEA00CC8E78 /* ActivityEntryMapper.swift in Sources */,
 				AD1A8AAB2010976000C56F65 /* APISettings.swift in Sources */,
+				AD648DAD2015D3AE00B30948 /* DateFormatter+utils.swift in Sources */,
 				AD1A8A7720107D3B00C56F65 /* AppDelegate.swift in Sources */,
 				D0CB7153201381CA007B4073 /* AppCoordinator.swift in Sources */,
 				AD9883DD2010BC87001408B9 /* CompanyResponse.swift in Sources */,
 				AD1A8A9D20108C1900C56F65 /* ProjectCell.swift in Sources */,
 				AD1A8AB02010B25700C56F65 /* ProjectsResponse.swift in Sources */,
 				AD9883E42010E501001408B9 /* Project.swift in Sources */,
+				AD648DB42015F75E00B30948 /* ActivityHeaderCell.swift in Sources */,
 				D0CB7147201338B8007B4073 /* CategoryMapper.swift in Sources */,
 				ADC25F192011D9A700B8CC73 /* ProjectEntry.swift in Sources */,
 				AD9883D92010B4C8001408B9 /* ProjectResponse.swift in Sources */,
@@ -662,9 +689,12 @@
 				D0CB715120138188007B4073 /* Coordinator.swift in Sources */,
 				D066BA172014F9FA00CC8E78 /* ProjectDetailPresenter.swift in Sources */,
 				AD9883EB2010E907001408B9 /* Mapper.swift in Sources */,
+				AD648DB920160A9F00B30948 /* ActivityViewDataMapper.swift in Sources */,
 				D0CB7140201332D5007B4073 /* ProjectService.swift in Sources */,
 				ADC25F152011D66D00B8CC73 /* CategoryEntry.swift in Sources */,
 				D03D6F5A20132D94006F4F41 /* ProjectContainer.swift in Sources */,
+				AD648DB02015EC8500B30948 /* ProjectHeaderCell.swift in Sources */,
+				AD648DB720160A3E00B30948 /* ActivityViewData.swift in Sources */,
 				D0CB715620138355007B4073 /* Color.swift in Sources */,
 				D0CB714920134375007B4073 /* ProjectsPresenter.swift in Sources */,
 				D066BA132014F51500CC8E78 /* Activity.swift in Sources */,

@@ -17,6 +17,9 @@ struct ProjectViewDataMapper: Mapper {
                                name: input.name,
                                description: input.description,
                                category: input.category?.name ?? "",
-                               company: input.company?.name ?? "")
+                               company: input.company?.name ?? "",
+                               createdOn: UtilDates.string(from: input.createdOn),
+                               startDate: UtilDates.string(from: input.startDate),
+                               endDate: UtilDates.string(from: input.endDate))
     }
 }

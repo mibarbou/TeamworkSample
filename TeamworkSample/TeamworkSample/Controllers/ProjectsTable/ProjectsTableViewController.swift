@@ -29,6 +29,8 @@ class ProjectsTableViewController: UITableViewController {
     func setup(){
         let nib = UINib(nibName: ProjectCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: ProjectCell.identifier)
+        tableView.rowHeight = 100.0
+        tableView.rowHeight = UITableViewAutomaticDimension
         addSegmentedControl()
     }
     

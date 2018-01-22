@@ -19,6 +19,10 @@ struct ProjectMapper: Mapper {
                        category: CategoryMapper.map(input: input.category),
                        company: CompanyMapper.map(input: input.company),
                        logo: URL(string: input.logo),
-                       status: input.status)
+                       status: input.status,
+                       createdOn: UtilDates.date(from: input.createdOn),
+                       startDate: UtilDates.date(timestampString: input.startDate),
+                       endDate: UtilDates.date(timestampString: input.endDate))
     }
+
 }

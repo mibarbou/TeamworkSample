@@ -42,6 +42,12 @@ class ProjectDetailViewController: UIViewController {
         self.title = project.name
         let nib = UINib(nibName: ActivityCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: ActivityCell.identifier)
+        let nibProjectHeader = UINib(nibName: ProjectHeaderCell.identifier, bundle: nil)
+        tableView.register(nibProjectHeader, forCellReuseIdentifier: ProjectHeaderCell.identifier)
+        let nibActivityHeader = UINib(nibName: ActivityHeaderCell.identifier, bundle: nil)
+        tableView.register(nibActivityHeader, forCellReuseIdentifier: ActivityHeaderCell.identifier)
+        tableView.estimatedSectionHeaderHeight = 200.0
+        tableView.sectionHeaderHeight = UITableViewAutomaticDimension
     }
 }
 
@@ -62,15 +68,38 @@ extension ProjectDetailViewController: ProjectDetailView {
 }
 
 extension ProjectDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return activityList.count
+        if section > 0 {
+            return activityList.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ActivityCell.identifier, for: indexPath) as! ActivityCell
-        let activity = self.activityList[indexPath.row]
-        cell.descriptionLabel.text = activity.id
-        return cell
+        if indexPath.section > 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ActivityCell.identifier, for: indexPath) as! ActivityCell
+            let activity = self.activityList[indexPath.row]
+            cell.configureCell(activity: activity)
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            let headerCell = tableView.dequeueReusableCell(withIdentifier: ProjectHeaderCell.identifier) as! ProjectHeaderCell
+            headerCell.configureHeaderCell(project: self.project)
+            return headerCell
+        } else if section == 1 {
+            let headerCell = tableView.dequeueReusableCell(withIdentifier: ActivityHeaderCell.identifier) as! ActivityHeaderCell
+            return headerCell
+        }
+        return nil
     }
 }
 

@@ -22,8 +22,8 @@ struct ActivityMapper: Mapper {
                         fromUsername: input.fromUsername,
                         forUserAvatarUrl: URL(string: input.forUserAvatarUrl),
                         forUsername: input.forUsername,
-                        dateTime: input.dateTime,
-                        dueDate: input.dueDate,
+                        dateTime: UtilDates.date(from: input.dateTime),
+                        dueDate: UtilDates.date(timestampString: input.dueDate),
                         projectId: input.projectId)
     }
 }
